@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			window.onload = function(){
+				var but = document.getElementById('but');
+				but.onclick = function(){
+					//方法1：我们可以通过id实现
+					document.getElementById('form1').reset();
+				}
+			}
+		</script>
+			
+	</head>
+	<body>
+		<form id="form1">
+			<label>用户名:</label>
+			<input type="text" /><br />
+			<label>密码：</label>
+			<input type="password" /><br />
+			<label>性别：</label>
+			<input name="sex" type="radio"/>女
+			<input name="sex" type="radio"/>男<br />
+			<label>爱好</label>
+			<input type="checkbox" />看书
+			<input type="checkbox" />敲代码
+			<input type="checkbox" />逛街
+			<input type="checkbox" />吃好吃的
+			<input type="checkbox" />睡觉
+			<br />
+			<textarea cols="15" rows="10"></textarea><br />
+			<select>
+				<option value="1">北京</option>
+				<option value="2">上海</option>
+				<option value="3">深圳</option>
+			</select>
+			<!--方法二：直接给个重置按钮-->
+			<input type="reset" />
+			<button id="but">提交</button>
+		</form>
+	</body>
+</html>
