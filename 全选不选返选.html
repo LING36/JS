@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function() {
+				var sele = document.getElementById('sele'); //全选
+				var nosele = document.getElementById('nosele'); //不选
+				var fanxuan = document.getElementById('fanxuan'); //返选
+				var box = document.getElementById('box');
+				var checkboxs = box.getElementsByTagName('input');
+				//全选
+				sele.onclick = function() {
+					for (var i = 0; i < checkboxs.length; i++) {
+						checkboxs[i].checked = true;
+					}
+				}
+				//不选
+				nosele.onclick = function() {
+					for (var i = 0; i < checkboxs.length; i++) {
+						checkboxs[i].checked = false;
+					}
+				}
+				//返选
+				fanxuan.onclick = function() {
+					for (var i = 0; i < checkboxs.length; i++) {
+						if (checkboxs[i].checked == false) {
+							checkboxs[i].checked = true
+						} else {
+							checkboxs[i].checked = false
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="全选" id="sele" />
+		<input type="button" value="不选" id="nosele" />
+		<input type="button" value="返选" id="fanxuan" />
+		<div id="box">
+			<input type="checkbox" />吃鱼<br />
+			<input type="checkbox" />吃菜<br />
+			<input type="checkbox" />喝水<br />
+			<input type="checkbox" />洗澡<br />
+			<input type="checkbox" />睡觉<br />
+			<input type="checkbox" />唱歌<br />
+			<input type="checkbox" />运动<br />
+			<input type="checkbox" />跑步<br />
+			<input type="checkbox" />水果<br />
+			<input type="checkbox" />啦啦啦<br />
+		</div>
+	</body>
+
+</html>
