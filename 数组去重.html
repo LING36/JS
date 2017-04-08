@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数组去重</title>
+	</head>
+	<script>
+		var arr = ['1','1','2','2','3','3','4','4'];
+		//先定义一个空数组
+		var arr2 = [];
+		function toSort(){
+			//循环遍历arr数组
+			for(var i=0;i<arr.length;i++){
+				if(arr2.indexOf(arr[i])!=-1){//在arr2数组中查询是否有arr数组里面的元素，没有的话就添加到arr2数组
+					
+				}else{
+					arr2.push(arr[i]);
+				}
+			}
+			console.log(arr2)//["1", "2", "3", "4"]
+		}
+		toSort();
+	</script>
+	<body>
+	</body>
+</html>
