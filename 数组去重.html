@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>数组去重</title>
 	</head>
 	<script>
-		var arr = ['1','1','2','2','3','3','4','4'];
+		var arr = ['5', '5', '2', '2', '3', '3', '4', '4'];
+		//方法1
 		//先定义一个空数组
 		var arr2 = [];
-		function toSort(){
+
+		function toSort() {
 			//循环遍历arr数组
-			for(var i=0;i<arr.length;i++){
-				if(arr2.indexOf(arr[i])!=-1){//在arr2数组中查询是否有arr数组里面的元素，没有的话就添加到arr2数组
-					
-				}else{
+			for (var i = 0; i < arr.length; i++) {
+				if (arr2.indexOf(arr[i]) != -1) { //在arr2数组中查询是否有arr数组里面的元素，没有的话就添加到arr2数组
+				} else {
 					arr2.push(arr[i]);
 				}
 			}
-			console.log(arr2)//["1", "2", "3", "4"]
+			console.log(arr2) //["1", "2", "3", "4"]
 		}
 		toSort();
+		//方法2     遍历数组，利用object对象保存数组值，判断数组值是否已经保存在object中，未保存则push到新数组并用object[arrayItem]=1的方式记录保存
+		function toSort2() {
+			var tmp = {};
+			var ret = [];
+			for(var i = 0; i < arr.length; i++) {
+				if (!tmp[arr[i]]) {//!tmp[arr[i]]相当于判断对象是否有这个属性，没有的话进去if条件语句，有的话就直接不进去   比如1这个属性第一次没有就进去，第二个1有了就不进去了
+					tmp[arr[i]] = 1;
+					ret.push(arr[i]);
+					console.log(tmp[arr[i]])
+				}
+			}
+			console.log(ret)
+			console.log(tmp)
+		}
+		toSort2();
+		//方法三  数组下标判断法, 遍历数组，利用indexOf判断元素的值是否与当前索引相等，如相等则加入
+		function toSort3() {
+			var rett = [];
+			arr.forEach(function(e, i, arr) {
+				console.log(e)
+				console.log(i)
+				if (arr.indexOf(e) === i) {
+					rett.push(e);
+				}
+			});
+			console.log(rett);
+		}
+		toSort3();
 	</script>
+
 	<body>
 	</body>
+
 </html>
